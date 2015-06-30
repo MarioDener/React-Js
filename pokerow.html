@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejemplo 1</title>
+</head>
+<body>
+	<div id="container"></div>
+	<script src="http://fb.me/react-0.13.3.js"></script>
+	<script src="http://fb.me/JSXTransformer-0.13.3.js"></script>
+	<script type="text/jsx;harmony=true">
+
+	var pokemons = [
+	{number:1,name:"Bulbasaur"},
+	{number:2,name:"Ivysaur"},
+	{number:3,name:"Venusaur"}
+	]
+
+	class PokeRow extends React.Component{
+		render() {
+			var url = `http://veekun.com/dex/media/pokemon/main-sprites/x-y/${this.props.number}.png`;
+			return <div>
+				<img src={url}/>
+				{this.props.name}
+			</div>
+		}
+	}
+
+
+	var pokemon = pokemons[0];
+	React.render(<PokeRow name={pokemon.name} number={pokemon.number}/>, document.getElementById('container'));
+
+	
+	// Devolver un nuevo nombre al container con el h1
+	</script>
+</body>
+</html>
