@@ -11,14 +11,20 @@
 	<script type="text/jsx;harmony=true">
 	class HelloWorldComponent extends React.Component{
 		render() {
-			return <h1> Hola {this.props.name}</h1>
+			return <h1> Hola { this.props.name }  Edad  { this.props.years }</h1>
 		}
 	}
+
+	HelloWorldComponent.propTypes = {
+		name: React.PropTypes.string,
+		years: React.PropTypes.number
+	}
+
 	// Agregamos un valor al contenedor container del div con un nuevo nombre
-	React.render(<HelloWorldComponent name="Mario"/>, document.getElementById('container'));
+	React.render(<HelloWorldComponent name="Mario" years={21}/>, document.getElementById('container'));
 
 	setTimeout(()=>{
-	React.render(<HelloWorldComponent name="Jose"/>, document.getElementById('container'));
+	React.render(<HelloWorldComponent name="Jose" years={20}/>, document.getElementById('container'));
 	} , 3000)
 	// Devolver un nuevo nombre al container con el h1
 	</script>
