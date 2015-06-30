@@ -15,7 +15,11 @@
 		}
 	}
 
-	React.render(<HelloWorldComponent name="pikachu"/>, document.getElementById('container'));
+	React.render(<HelloWorldComponent name="Mario"/>, document.getElementById('container'));
+
+	setTimeout(()=>{
+	React.render(<HelloWorldComponent name="Jose"/>, document.getElementById('container'));		
+	} , 3000)
 	</script>
 </body>
 </html>
