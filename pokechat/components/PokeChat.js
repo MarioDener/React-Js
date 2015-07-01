@@ -8,7 +8,7 @@ export default class PokeChat extends React.Component{
 
 		{
 			this.props.messages.map((message) => {
-				return <PokeMessage message = {message} />
+				return <PokeMessage key={message.id} message = {message} />
 			})
 		}
 		</ul>
