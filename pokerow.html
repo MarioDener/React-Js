@@ -16,19 +16,41 @@
 	{number:3,name:"Venusaur"}
 	]
 
+	class PokeAvatar extends React.Component{
+		render (){
+			var url = `http://veekun.com/dex/media/pokemon/main-sprites/x-y/${this.props.number}.png`;
+			return <img src={url} className="avatar"/>
+		}
+	}
+
 	class PokeRow extends React.Component{
 		render() {
-			var url = `http://veekun.com/dex/media/pokemon/main-sprites/x-y/${this.props.number}.png`;
-			return <div>
-				<img src={url}/>
+			
+			return <li className="pokerow">
+				<PokeAvatar number={this.props.number} />
 				{this.props.name}
-			</div>
+			</li>
+		}
+	}
+
+	class PokeTable extends React.Component{
+		render(){
+			return <ul className="poketable">
+				{
+					// map lo que hace es mirar dentro de esta lista y ejecutar para cada uno de los elemntos que lo comprendan
+					this.props.pokemons.map((pokemon) => {
+						return < PokeRow name={pokemon.name} number={pokemon.number} />
+					})
+				}
+			</ul>
 		}
 	}
 
 
 	var pokemon = pokemons[0];
 	React.render(<PokeRow name={pokemon.name} number={pokemon.number}/>, document.getElementById('container'));
+
+	// React.render(<PokeTable/>,document.getElementById('container'));
 
 	
 	// Devolver un nuevo nombre al container con el h1
