@@ -55,12 +55,16 @@ var PokeRow = (function (_React$Component) {
 	_inherits(PokeRow, _React$Component);
 
 	_createClass(PokeRow, [{
+		key: 'onClick',
+		value: function onClick(ev) {
+			alert(this.props.name);
+		}
+	}, {
 		key: 'render',
 		value: function render() {
-
 			return _react2['default'].createElement(
 				'li',
-				{ className: 'pokerow' },
+				{ className: 'pokerow', onClick: this.onClick.bind(this) },
 				_react2['default'].createElement(_pokeavatar2['default'], { number: this.props.number }),
 				this.props.name
 			);
