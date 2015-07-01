@@ -47,8 +47,8 @@
 	}
 
 
-	var pokemon = pokemons[0];
-	React.render(<PokeRow name={pokemon.name} number={pokemon.number}/>, document.getElementById('container'));
+	// var pokemon = pokemons[0];
+	React.render(<PokeTable pokemons={pokemons}/>, document.getElementById('container'));
 
 	// React.render(<PokeTable/>,document.getElementById('container'));
 
